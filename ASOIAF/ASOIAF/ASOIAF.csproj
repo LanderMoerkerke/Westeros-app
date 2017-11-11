@@ -42,6 +42,9 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\Books.cs" />
+    <Compile Include="Model\Characters.cs" />
+    <Compile Include="Model\Houses.cs" />
+    <Compile Include="Model\WesterosManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
