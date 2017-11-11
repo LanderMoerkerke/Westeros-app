@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ASOIAF.Model
 {
-	public class Characters
+	public class Character
 	{
 		[JsonProperty("url")]
 		public string Url { get; set; }

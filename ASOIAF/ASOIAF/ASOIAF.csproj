@@ -41,9 +41,9 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Model\Books.cs" />
-    <Compile Include="Model\Characters.cs" />
-    <Compile Include="Model\Houses.cs" />
+    <Compile Include="Model\Book.cs" />
+    <Compile Include="Model\Character.cs" />
+    <Compile Include="Model\House.cs" />
     <Compile Include="Model\WesterosManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
