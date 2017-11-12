@@ -1,15 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
-	x:Class="ASOIAF.OverviewPage"
+	x:Class="ASOIAF.View.OverviewPage"
 	xmlns="http://xamarin.com/schemas/2014/forms"
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-	xmlns:local="clr-namespace:ASOIAF">
-	<ContentPage.Content>
-		<StackLayout>
-			<Label
-				HorizontalOptions="CenterAndExpand"
-				Text="Welcome to Xamarin.Forms!"
-				VerticalOptions="CenterAndExpand" />
+	xmlns:local="clr-namespace:ASOIAF.View"
+	NavigationPage.HasNavigationBar="False">
+	<StackLayout>
+		<Image
+			x:Name="imgBanner"
+			Aspect="AspectFill"
+			HeightRequest="200" />
+		<StackLayout Margin="10" BackgroundColor="White">
+			<Label Text="test" TextColor="Black" />
 		</StackLayout>
-	</ContentPage.Content>
+	</StackLayout>
 </ContentPage>

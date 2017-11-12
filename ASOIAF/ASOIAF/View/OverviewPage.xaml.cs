@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
-namespace ASOIAF
+namespace ASOIAF.View
 {
 	public partial class OverviewPage : ContentPage
 	{
@@ -15,7 +15,14 @@ namespace ASOIAF
 		{
 			InitializeComponent();
 
+			ShowData();
+
 			TestGet();
+		}
+
+		private void ShowData()
+		{
+			imgBanner.Source = ImageSource.FromResource("ASOIAF.Image.banner.jpg");
 		}
 
 		private async void TestGet()
