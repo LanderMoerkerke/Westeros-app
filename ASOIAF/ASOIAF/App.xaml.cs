@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using ASOIAF.View;
 using Xamarin.Forms;
 
 namespace ASOIAF
@@ -12,7 +13,8 @@ namespace ASOIAF
 		{
 			InitializeComponent();
 
-			MainPage = new ASOIAF.OverviewPage();
+			MainPage = new NavigationPage(new OverviewPage());
+			//MainPage.SetValue(NavigationPage.BarBackgroundColorProperty, Color.Black);
 		}
 
 		protected override void OnStart()
