@@ -12,7 +12,7 @@ namespace ASOIAF
 		{
 			InitializeComponent();
 
-			MainPage = new ASOIAF.MainPage();
+			MainPage = new ASOIAF.OverviewPage();
 		}
 
 		protected override void OnStart()
