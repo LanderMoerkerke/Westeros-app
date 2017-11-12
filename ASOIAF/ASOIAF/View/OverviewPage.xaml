@@ -4,14 +4,79 @@
 	xmlns="http://xamarin.com/schemas/2014/forms"
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 	xmlns:local="clr-namespace:ASOIAF.View"
+	BackgroundColor="#666"
 	NavigationPage.HasNavigationBar="False">
-	<StackLayout>
-		<Image
-			x:Name="imgBanner"
-			Aspect="AspectFill"
-			HeightRequest="200" />
-		<StackLayout Margin="10" BackgroundColor="White">
-			<Label Text="test" TextColor="Black" />
+	<ScrollView>
+		<StackLayout Margin="0">
+			<Image
+				x:Name="imgBanner"
+				Margin="0"
+				Aspect="AspectFill"
+				BackgroundColor="Black"
+				HeightRequest="200" />
+			<Label
+				Margin="0,25"
+				FontSize="24"
+				HorizontalOptions="FillAndExpand"
+				HorizontalTextAlignment="Center"
+				Text="A  S o n g  O f  I c e  A n d  F i r e"
+				TextColor="Black" />
+			<!--  FontFamily="got.ttf#Game Of Thrones"/>  -->
+			<StackLayout Margin="10,0" Spacing="40">
+				<StackLayout>
+					<Label
+						FontAttributes="Bold"
+						FontSize="20"
+						Text="Discover"
+						TextColor="#2D2D2D" />
+					<Frame
+						BackgroundColor="#C3C3C3"
+						HasShadow="True"
+						OutlineColor="DarkGray">
+						<Label Text="test" TextColor="Black" />
+						<Frame.GestureRecognizers>
+							<TapGestureRecognizer x:Name="btnDiscover" />
+						</Frame.GestureRecognizers>
+					</Frame>
+				</StackLayout>
+				<StackLayout>
+					<Label
+						FontAttributes="Bold"
+						FontSize="20"
+						Text="Tables"
+						TextColor="#2D2D2D" />
+					<Frame
+						Margin="0,5"
+						BackgroundColor="#C3C3C3"
+						HasShadow="True"
+						OutlineColor="DarkGray">
+						<Label Text="Books" TextColor="Black" />
+						<Frame.GestureRecognizers>
+							<TapGestureRecognizer x:Name="btnBooks" />
+						</Frame.GestureRecognizers>
+					</Frame>
+					<Frame
+						Margin="0,5"
+						BackgroundColor="#C3C3C3"
+						HasShadow="True"
+						OutlineColor="DarkGray">
+						<Label Text="Characters" TextColor="Black" />
+						<Frame.GestureRecognizers>
+							<TapGestureRecognizer x:Name="btnCharacters" />
+						</Frame.GestureRecognizers>
+					</Frame>
+					<Frame
+						Margin="0,5"
+						BackgroundColor="#C3C3C3"
+						HasShadow="True"
+						OutlineColor="DarkGray">
+						<Label Text="Houses" TextColor="Black" />
+						<Frame.GestureRecognizers>
+							<TapGestureRecognizer x:Name="btnHouses" />
+						</Frame.GestureRecognizers>
+					</Frame>
+				</StackLayout>
+			</StackLayout>
 		</StackLayout>
-	</StackLayout>
+	</ScrollView>
 </ContentPage>

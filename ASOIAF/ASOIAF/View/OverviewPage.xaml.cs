@@ -17,12 +17,35 @@ namespace ASOIAF.View
 
 			ShowData();
 
-			TestGet();
+			btnDiscover.Tapped += BtnDiscover_Tapped;
+			btnBooks.Tapped += BtnBooks_Tapped;
+			btnCharacters.Tapped += BtnCharacters_Tapped;
+			btnHouses.Tapped += BtnHouses_Tapped;
 		}
 
 		private void ShowData()
 		{
 			imgBanner.Source = ImageSource.FromResource("ASOIAF.Image.banner.jpg");
+		}
+
+		private void BtnDiscover_Tapped(object sender, EventArgs e)
+		{
+			Navigation.PushAsync(new )
+		}
+
+		private void BtnBooks_Tapped(object sender, EventArgs e)
+		{
+			throw new NotImplementedException();
+		}
+
+		private void BtnCharacters_Tapped(object sender, EventArgs e)
+		{
+			throw new NotImplementedException();
+		}
+
+		private void BtnHouses_Tapped(object sender, EventArgs e)
+		{
+			throw new NotImplementedException();
 		}
 
 		private async void TestGet()
