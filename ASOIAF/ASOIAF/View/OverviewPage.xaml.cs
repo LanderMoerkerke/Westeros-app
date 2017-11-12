@@ -21,6 +21,8 @@ namespace ASOIAF.View
 			btnBooks.Tapped += BtnBooks_Tapped;
 			btnCharacters.Tapped += BtnCharacters_Tapped;
 			btnHouses.Tapped += BtnHouses_Tapped;
+
+			TestGet();
 		}
 
 		private void ShowData()
@@ -30,31 +32,31 @@ namespace ASOIAF.View
 
 		private void BtnDiscover_Tapped(object sender, EventArgs e)
 		{
-			Navigation.PushAsync(new )
+			throw new NotImplementedException();
 		}
 
 		private void BtnBooks_Tapped(object sender, EventArgs e)
 		{
-			throw new NotImplementedException();
+			Navigation.PushAsync(new BooksPage());
 		}
 
 		private void BtnCharacters_Tapped(object sender, EventArgs e)
 		{
-			throw new NotImplementedException();
+			Navigation.PushAsync(new CharacterPage());
 		}
 
 		private void BtnHouses_Tapped(object sender, EventArgs e)
 		{
-			throw new NotImplementedException();
+			Navigation.PushAsync(new HousesPage());
 		}
 
 		private async void TestGet()
 		{
 			try
 			{
-				List<House> collection = await WesterosManager.GetHousesAsync();
+				List<Character> collection = await WesterosManager.GetCharactersAsync();
 
-				foreach (House item in collection)
+				foreach (Character item in collection)
 				{
 					Debug.WriteLine(item.Name);
 				}

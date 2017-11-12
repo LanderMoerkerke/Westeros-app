@@ -16,10 +16,11 @@
 				HeightRequest="200" />
 			<Label
 				Margin="0,25"
+				FontFamily="got.ttf#Game Of Thrones"
 				FontSize="24"
 				HorizontalOptions="FillAndExpand"
 				HorizontalTextAlignment="Center"
-				Text="A  S o n g  O f  I c e  A n d  F i r e"
+				Text="A S o n g  O f  I c e  A n d  F i r e"
 				TextColor="Black" />
 			<!--  FontFamily="got.ttf#Game Of Thrones"/>  -->
 			<StackLayout Margin="10,0" Spacing="40">
