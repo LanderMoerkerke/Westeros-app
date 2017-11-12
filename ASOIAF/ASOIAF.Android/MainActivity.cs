@@ -22,6 +22,12 @@ namespace ASOIAF.Droid
 			global::Xamarin.Forms.Forms.Init(this, bundle);
 			LoadApplication(new App());
 		}
+
+		protected override void OnStart()
+		{
+			Window.SetStatusBarColor(Android.Graphics.Color.Black);
+			base.OnStart();
+		}
 	}
 }
 
