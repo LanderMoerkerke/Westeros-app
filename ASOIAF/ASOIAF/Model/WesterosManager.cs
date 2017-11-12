@@ -44,18 +44,23 @@ namespace ASOIAF.Model
 			client.DefaultRequestHeaders.Add("Accept", "application/json");
 
 			HttpResponseMessage response = await client.GetAsync(new Uri(UrlAll("https://www.anapioficeandfire.com/api/characters")));
+
 			string result = await response.Content.ReadAsStringAsync();
 
 			//"<https://www.anapioficeandfire.com/api/books?page=2&pageSize=10>; rel=\"next\", <https://www.anapioficeandfire.com/api/books?page=1&pageSize=10>; rel=\"first\", <https://www.anapioficeandfire.com/api/books?page=2&pageSize=10>; rel=\"last\""
 			//bool isUri = Uri.IsWellFormedUriString(nextUrl, UriKind.RelativeOrAbsolute);
 
+			// header inlezen, hierin zit de link naar de volgende pagina
 			string headerLink = response.Headers.GetValues("Link").ToList()[0];
 
+			// vormt de header om naar een dictionary met de verschillende links naar de 'next', 'first' en 'last' pagina
 			Dictionary<string, Uri> dictLinks = ConvertHeaderLinkToDictionairy(headerLink);
 
+			// kijken of de volgende link verschillend is van de laatste (laatste wordt nog niet verwerkt TO DO)
 			while (dictLinks["next"] != dictLinks["last"])
 			{
 				teller++;
+
 				response = await client.GetAsync(dictLinks["next"]);
 				result += response.Content.ReadAsStringAsync();
 
