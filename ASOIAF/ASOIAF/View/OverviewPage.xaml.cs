@@ -56,7 +56,9 @@ namespace ASOIAF.View
 			{
 				List<Character> collection = await WesterosManager.GetCharactersAsync();
 
-				foreach (Character item in collection)
+				List<Character> newList = collection.Distinct().ToList();
+
+				foreach (Character item in newList)
 				{
 					Debug.WriteLine(item.Name);
 				}

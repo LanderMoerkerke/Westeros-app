@@ -7,6 +7,8 @@ using System.Net.Http;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+
+
 namespace ASOIAF.Model
 {
 	public static class WesterosManager
@@ -38,8 +40,6 @@ namespace ASOIAF.Model
 
 		public static async Task<List<Character>> GetCharactersAsync()
 		{
-			int teller = 0;
-
 			HttpClient client = new HttpClient();
 			client.DefaultRequestHeaders.Add("Accept", "application/json");
 
@@ -56,32 +56,48 @@ namespace ASOIAF.Model
 			// vormt de header om naar een dictionary met de verschillende links naar de 'next', 'first' en 'last' pagina
 			Dictionary<string, Uri> dictLinks = ConvertHeaderLinkToDictionairy(headerLink);
 
-			// kijken of de volgende link verschillend is van de laatste (laatste wordt nog niet verwerkt TO DO)
-			while (dictLinks["next"] != dictLinks["last"])
+			Dictionary<string, string> dictQueryString = ParseQueryStringFromUri(dictLinks["last"]);
+
+			int lastPage = int.Parse(dictQueryString["page"]);
+
+			// tests
+			string url = "https://www.anapioficeandfire.com/api/characters?pageSize=50&page=";
+
+			string result2 = string.Empty;
+			List<Task> tasks = new List<Task>();
+
+			List<Character> characters = JsonConvert.DeserializeObject<List<Character>>(result);
+			for (int i = 2; i < lastPage + 1; i++)
 			{
-				teller++;
+				//string getUrl = url + i.ToString();
+				//result += client.GetStringAsync(getUrl);
+				//Task task = Task.Run(() => result2 += client.GetStringAsync(getUrl));
+				//tasks.Add(task);
 
-				response = await client.GetAsync(dictLinks["next"]);
-				result += response.Content.ReadAsStringAsync();
+				HttpResponseMessage response2 = await client.GetAsync(UrlAll("https://www.anapioficeandfire.com/api/characters") + "&page=" + i.ToString());
+				result2 = await response.Content.ReadAsStringAsync();
 
-				headerLink = response.Headers.GetValues("Link").ToList()[0];
-
-				dictLinks["next"] = null;
-				dictLinks = ConvertHeaderLinkToDictionairy(headerLink);
-
-				if (teller > 50)
-				{
-					break;
-				}
+				List<Character> characters2 =  JsonConvert.DeserializeObject<List<Character>>(result2);
+				characters.AddRange(characters2);
 			}
+			//await Task.WhenAll(tasks);
+			
+
 
 			if (result == null)
 			{
 				return null;
 			}
 
-			List<Character> characters = JsonConvert.DeserializeObject<List<Character>>(result);
-			return characters;
+			try
+			{
+				return characters;
+			}
+			catch (Exception e)
+			{
+				Debug.WriteLine(e.Message);
+				throw;
+			}
 		}
 
 		public static async Task<List<House>> GetHousesAsync()
@@ -123,6 +139,26 @@ namespace ASOIAF.Model
 			}
 
 			return dictLinks;
+		}
+
+		private static Dictionary<string, string> ParseQueryStringFromString(string uri)
+		{
+			string substring = uri.Substring(((uri.LastIndexOf('?') == -1) ? 0 : uri.LastIndexOf('?') + 1));
+
+			string[] pairs = substring.Split('&');
+
+			Dictionary<string, string> output = new Dictionary<string, string>();
+
+			foreach (string piece in pairs)
+			{
+				string[] pair = piece.Split('=');
+				output.Add(pair[0], pair[1]);
+			}
+			return output;
+		}
+		private static Dictionary<string, string> ParseQueryStringFromUri(Uri uri)
+		{
+			return ParseQueryStringFromString(uri.ToString());
 		}
 	}
 }
