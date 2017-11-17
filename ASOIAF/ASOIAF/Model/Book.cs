@@ -43,5 +43,11 @@ namespace ASOIAF.Model
 
 		[JsonProperty("povCharacters")]
 		public List<string> PovCharacters { get; set; }
+
+		public int YearReleased
+		{
+			get { return Released.Year; }
+		}
+
 	}
 }
