@@ -11,6 +11,8 @@ namespace ASOIAF.View
 {
 	public partial class OverviewPage : ContentPage
 	{
+		public List<Character> Characters { get; set; }
+
 		public OverviewPage()
 		{
 			InitializeComponent();
@@ -52,23 +54,7 @@ namespace ASOIAF.View
 
 		private async void TestGet()
 		{
-			try
-			{
-				List<Character> collection = await WesterosManager.GetCharactersAsync();
-
-				List<Character> newList = collection.Distinct().ToList();
-
-				foreach (Character item in newList)
-				{
-					Debug.WriteLine(item.Name);
-				}
-			}
-			catch (Exception e)
-			{
-				Debug.WriteLine(e.Message);
-				throw;
-			}
-			
+			Characters = await WesterosManager.GetCharactersAsync();
 		}
 	}
 }
