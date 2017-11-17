@@ -9,9 +9,9 @@ namespace ASOIAF.Model
 {
 	public class House
 	{
-		public int HouseId
+		public int Id
 		{
-			get { return int.Parse(Url.Substring(Url.LastIndexOf('/'), Url.Length - Url.LastIndexOf('/'))); }
+			get { return int.Parse(Url.Substring(Url.LastIndexOf('/') + 1, Url.Length - Url.LastIndexOf('/') - 1)); }
 		}
 
 		[JsonProperty("url")]
