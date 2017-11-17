@@ -14,7 +14,6 @@ namespace ASOIAF
 			InitializeComponent();
 
 			MainPage = new NavigationPage(new OverviewPage());
-			//MainPage.SetValue(NavigationPage.BarBackgroundColorProperty, Color.Black);
 		}
 
 		protected override void OnStart()
