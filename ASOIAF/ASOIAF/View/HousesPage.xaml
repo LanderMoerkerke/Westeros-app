@@ -28,7 +28,7 @@
 							<StackLayout VerticalOptions="CenterAndExpand">
 								<Label
 									HorizontalTextAlignment="End"
-									Text="{Binding HouseId}"
+									Text="{Binding Id}"
 									TextColor="Black" />
 							</StackLayout>
 						</Grid>
