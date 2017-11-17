@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ASOIAF.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,7 +13,7 @@ namespace ASOIAF.View
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class CharacterDetail : ContentPage
 	{
-		public CharacterDetail()
+		public CharacterDetail(Character pSelectedCharacter)
 		{
 			InitializeComponent();
 		}
