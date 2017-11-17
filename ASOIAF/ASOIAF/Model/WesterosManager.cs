@@ -22,8 +22,7 @@ namespace ASOIAF.Model
 
 		public static async Task<List<Book>> GetBooksAsync()
 		{
-			HttpClient client = new HttpClient();
-			client.DefaultRequestHeaders.Add("Accept", "application/json");
+			HttpClient client = GetHttpClientForJson();
 
 			HttpResponseMessage response = await client.GetAsync(new Uri(UrlAll("https://www.anapioficeandfire.com/api/books")));
 			string result = await response.Content.ReadAsStringAsync();
@@ -40,64 +39,50 @@ namespace ASOIAF.Model
 
 		public static async Task<List<Character>> GetCharactersAsync()
 		{
-			HttpClient client = new HttpClient();
-			client.DefaultRequestHeaders.Add("Accept", "application/json");
+			HttpClient client = GetHttpClientForJson();
 
 			HttpResponseMessage response = await client.GetAsync(new Uri(UrlAll("https://www.anapioficeandfire.com/api/characters")));
-
 			string result = await response.Content.ReadAsStringAsync();
 
-			//"<https://www.anapioficeandfire.com/api/books?page=2&pageSize=10>; rel=\"next\", <https://www.anapioficeandfire.com/api/books?page=1&pageSize=10>; rel=\"first\", <https://www.anapioficeandfire.com/api/books?page=2&pageSize=10>; rel=\"last\""
-			//bool isUri = Uri.IsWellFormedUriString(nextUrl, UriKind.RelativeOrAbsolute);
+			List<Character> characters = JsonConvert.DeserializeObject<List<Character>>(result);
 
 			// header inlezen, hierin zit de link naar de volgende pagina
 			string headerLink = response.Headers.GetValues("Link").ToList()[0];
 
 			// vormt de header om naar een dictionary met de verschillende links naar de 'next', 'first' en 'last' pagina
-			Dictionary<string, Uri> dictLinks = ConvertHeaderLinkToDictionairy(headerLink);
+			Dictionary<string, Uri> dictLinks = ConvertHeaderLinkToLinks(headerLink);
 
 			Dictionary<string, string> dictQueryString = ParseQueryStringFromUri(dictLinks["last"]);
 
 			int lastPage = int.Parse(dictQueryString["page"]);
 
-			// tests
-			string url = "https://www.anapioficeandfire.com/api/characters?pageSize=50&page=";
+			List<Task> pageFetchTasks = new List<Task>();
 
-			string result2 = string.Empty;
-			List<Task> tasks = new List<Task>();
-
-			List<Character> characters = JsonConvert.DeserializeObject<List<Character>>(result);
 			for (int i = 2; i < lastPage + 1; i++)
 			{
-				//string getUrl = url + i.ToString();
-				//result += client.GetStringAsync(getUrl);
-				//Task task = Task.Run(() => result2 += client.GetStringAsync(getUrl));
-				//tasks.Add(task);
-
-				HttpResponseMessage response2 = await client.GetAsync(UrlAll("https://www.anapioficeandfire.com/api/characters") + "&page=" + i.ToString());
-				result2 = await response.Content.ReadAsStringAsync();
-
-				List<Character> characters2 =  JsonConvert.DeserializeObject<List<Character>>(result2);
-				characters.AddRange(characters2);
+				Task<String> fetchPageTask = client.GetStringAsync("https://www.anapioficeandfire.com/api/characters?pageSize=50&page=" + i.ToString());
+				pageFetchTasks.Add(fetchPageTask);
 			}
-			//await Task.WhenAll(tasks);
-			
 
+			foreach (Task<String> fetchPageTask in pageFetchTasks)
+			{
+				result = await fetchPageTask;
+				characters.AddRange(JsonConvert.DeserializeObject<List<Character>>(result));
+			}
 
 			if (result == null)
 			{
 				return null;
 			}
 
-			try
-			{
-				return characters;
-			}
-			catch (Exception e)
-			{
-				Debug.WriteLine(e.Message);
-				throw;
-			}
+			return characters;
+		}
+
+		private static HttpClient GetHttpClientForJson() {
+			HttpClient client = new HttpClient();
+			client.DefaultRequestHeaders.Add("Accept", "application/json");
+
+			return client;
 		}
 
 		public static async Task<List<House>> GetHousesAsync()
@@ -116,7 +101,7 @@ namespace ASOIAF.Model
 			return houses;
 		}
 
-		private static Dictionary<string, Uri> ConvertHeaderLinkToDictionairy(string pHeaderLink)
+		private static Dictionary<string, Uri> ConvertHeaderLinkToLinks(string pHeaderLink)
 		{
 			Dictionary<string, Uri> dictLinks = new Dictionary<string, Uri>();
 
