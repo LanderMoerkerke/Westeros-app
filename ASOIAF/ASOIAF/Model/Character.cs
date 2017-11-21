@@ -14,6 +14,11 @@ namespace ASOIAF.Model
 			get { return int.Parse(Url.Substring(Url.LastIndexOf('/') + 1, Url.Length - Url.LastIndexOf('/') - 1)); }
 		}
 
+		public bool IsAlive
+		{
+			get { return (Died.Length == 0) ? true : false; }
+		}
+
 		[JsonProperty("url")]
 		public string Url { get; set; }
 
