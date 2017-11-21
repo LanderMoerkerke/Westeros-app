@@ -3,12 +3,207 @@
 	x:Class="ASOIAF.View.CharacterDetail"
 	xmlns="http://xamarin.com/schemas/2014/forms"
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	BackgroundColor="White"
 	NavigationPage.HasNavigationBar="False">
 
-	<Grid>
-		<Grid.ColumnDefinitions>
-			<ColumnDefinition Width="" />
-			<ColumnDefinition />
-		</Grid.ColumnDefinitions>
-	</Grid>
+
+	<StackLayout>
+		<StackLayout
+			Padding="4"
+			BackgroundColor="Black"
+			HorizontalOptions="Fill">
+			<Label
+				x:Name="lblName"
+				FontSize="Large"
+				HorizontalTextAlignment="Center"
+				Text="Test"
+				TextColor="White" />
+		</StackLayout>
+	</StackLayout>
+	<StackLayout Margin="12,10" Spacing="15">
+		<Grid>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="175" />
+				<ColumnDefinition Width="*" />
+			</Grid.ColumnDefinitions>
+			<Label
+				Grid.Column="0"
+				FontSize="Large"
+				Text="Aliases"
+				TextColor="Black" />
+			<Label
+				x:Name="lblAliases"
+				Grid.Column="1"
+				FontSize="Large"
+				Text="Test2"
+				TextColor="Black" />
+		</Grid>
+
+		<Grid>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="175" />
+				<ColumnDefinition Width="*" />
+			</Grid.ColumnDefinitions>
+			<Label
+				Grid.Column="0"
+				FontSize="Large"
+				Text="Allegiances"
+				TextColor="Black" />
+			<Label
+				x:Name="lblAllegiances"
+				Grid.Column="1"
+				FontSize="Large"
+				Text="Test2"
+				TextColor="Black" />
+		</Grid>
+
+		<Grid>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="175" />
+				<ColumnDefinition Width="*" />
+			</Grid.ColumnDefinitions>
+			<Label
+				Grid.Column="0"
+				FontSize="Large"
+				Text="Gender"
+				TextColor="Black" />
+			<Label
+				x:Name="lblGender"
+				Grid.Column="1"
+				FontSize="Large"
+				Text="Test2"
+				TextColor="Black" />
+		</Grid>
+
+		<Grid>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="175" />
+				<ColumnDefinition Width="*" />
+			</Grid.ColumnDefinitions>
+			<Label
+				Grid.Column="0"
+				FontSize="Large"
+				Text="Culture"
+				TextColor="Black" />
+			<Label
+				x:Name="lblCulture"
+				Grid.Column="1"
+				FontSize="Large"
+				Text="Test2"
+				TextColor="Black" />
+		</Grid>
+
+		<Grid>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="175" />
+				<ColumnDefinition Width="*" />
+			</Grid.ColumnDefinitions>
+			<Label
+				Grid.Column="0"
+				FontSize="Large"
+				Text="Born"
+				TextColor="Black" />
+			<Label
+				x:Name="lblBorn"
+				Grid.Column="1"
+				FontSize="Large"
+				Text="Test2"
+				TextColor="Black" />
+		</Grid>
+
+		<Grid>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="175" />
+				<ColumnDefinition Width="*" />
+			</Grid.ColumnDefinitions>
+			<Label
+				Grid.Column="0"
+				FontSize="Large"
+				Text="Status"
+				TextColor="Black" />
+			<Label
+				x:Name="lblIsAlive"
+				Grid.Column="1"
+				FontSize="Large"
+				Text="Test2"
+				TextColor="Black" />
+		</Grid>
+
+
+		<Grid x:Name="lblDiedTip">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="175" />
+				<ColumnDefinition Width="*" />
+			</Grid.ColumnDefinitions>
+			<Label
+				Grid.Column="0"
+				FontSize="Large"
+				Text="Died"
+				TextColor="Black" />
+			<Label
+				x:Name="lblDied"
+				Grid.Column="1"
+				FontSize="Large"
+				Text="Test2"
+				TextColor="Black" />
+		</Grid>
+
+
+		<Grid x:Name="grdFamilyTree">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="175" />
+				<ColumnDefinition Width="*" />
+			</Grid.ColumnDefinitions>
+			<Label
+				FontSize="Large"
+				Text="Family tree"
+				TextColor="Black" />
+			<Label
+				Grid.Row="1"
+				Grid.Column="0"
+				FontSize="Large"
+				Text="Father"
+				TextColor="Black" />
+			<Label
+				x:Name="lblFather"
+				Grid.Row="1"
+				Grid.Column="1"
+				FontSize="Large"
+				TextColor="Black" />
+
+			<Label
+				Grid.Row="2"
+				Grid.Column="0"
+				FontSize="Large"
+				Text="Mother"
+				TextColor="Black" />
+			<Label
+				x:Name="lblMother"
+				Grid.Row="2"
+				Grid.Column="1"
+				FontSize="Large"
+				TextColor="Black" />
+
+			<Label
+				Grid.Row="3"
+				Grid.Column="0"
+				FontSize="Large"
+				Text="Spouse"
+				TextColor="Black" />
+			<Label
+				x:Name="lblSpouse"
+				Grid.Row="3"
+				Grid.Column="1"
+				FontSize="Large"
+				TextColor="Black" />
+		</Grid>
+	</StackLayout>
+	<!--
+		List Titles
+		List Aliases
+		Father
+		Mother
+		Spouse
+		List Allegiances
+	-->
 </ContentPage>

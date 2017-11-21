@@ -6,6 +6,10 @@
 	NavigationPage.HasNavigationBar="False">
 	<StackLayout HeightRequest="100" Spacing="0">
 		<BoxView BackgroundColor="DarkGray" HeightRequest="10" />
+		<SearchBar
+			x:Name="srchBar"
+			HeightRequest="50"
+			Placeholder="Search" />
 		<ListView x:Name="lvwCharacters" RowHeight="75">
 			<ListView.ItemTemplate>
 				<DataTemplate>

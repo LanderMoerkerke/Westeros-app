@@ -16,7 +16,6 @@
 				HeightRequest="200" />
 			<Label
 				Margin="0,25"
-				FontFamily="got.ttf#Game Of Thrones"
 				FontSize="24"
 				HorizontalOptions="FillAndExpand"
 				HorizontalTextAlignment="Center"

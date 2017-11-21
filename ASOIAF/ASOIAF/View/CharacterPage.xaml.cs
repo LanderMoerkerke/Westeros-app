@@ -1,6 +1,7 @@
 ﻿using ASOIAF.Model;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,6 +21,20 @@ namespace ASOIAF.View
 			LoadCharacters();
 
 			lvwCharacters.ItemSelected += LvwCharacters_ItemSelected;
+			srchBar.SearchButtonPressed += SrchBar_SearchButtonPressed;
+		}
+
+		private void SrchBar_SearchButtonPressed(object sender, EventArgs e)
+		{
+			if (srchBar.Text != string.Empty)
+			{
+				lvwCharacters.ItemsSource =  WesterosManager.FilterListCharactersName(Characters, srchBar.Text);
+				srchBar.Text = "";
+			}
+			else
+			{
+				lvwCharacters.ItemsSource = WesterosManager.FilterListCharactersName(Characters, "");
+			}
 		}
 
 		private void LvwCharacters_ItemSelected(object sender, SelectedItemChangedEventArgs e)
@@ -38,6 +53,7 @@ namespace ASOIAF.View
 			Characters = await WesterosManager.GetCharactersAsync();
 			Characters = Characters.FindAll(c => c.Name != "");
 			lvwCharacters.ItemsSource = Characters;
+			CharacterDetail.ListCharacters = Characters;
 		}
 	}
 }
