@@ -78,6 +78,12 @@ namespace ASOIAF.Model
 			return characters;
 		}
 
+		public static List<Character> FilterListCharactersName(List<Character> pList, string pFiltername)
+		{
+			return pList.FindAll(c => c.Name.ToLower().Contains(pFiltername.ToLower().Trim()));
+		}
+
+
 		private static HttpClient GetHttpClientForJson() {
 			HttpClient client = new HttpClient();
 			client.DefaultRequestHeaders.Add("Accept", "application/json");
