@@ -19,6 +19,12 @@ namespace ASOIAF.View
 		{
 			InitializeComponent();
 			GetHouses();
+			btnBack.Clicked += BtnBack_Clicked;
+		}
+
+		private void BtnBack_Clicked(object sender, EventArgs e)
+		{
+			Navigation.PopAsync();
 		}
 
 		private async void GetHouses()
