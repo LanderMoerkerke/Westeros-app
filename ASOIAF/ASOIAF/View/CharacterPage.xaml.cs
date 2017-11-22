@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using Xamarin.Forms.Internals;
 using Xamarin.Forms.Xaml;
 
 namespace ASOIAF.View
@@ -21,19 +22,24 @@ namespace ASOIAF.View
 			LoadCharacters();
 
 			lvwCharacters.ItemSelected += LvwCharacters_ItemSelected;
-			srchBar.SearchButtonPressed += SrchBar_SearchButtonPressed;
+			srchBar.TextChanged += SrchBar_SearchTextChanged;
+			btnBack.Clicked += BtnBack_Clicked;
 		}
 
-		private void SrchBar_SearchButtonPressed(object sender, EventArgs e)
+		private void BtnBack_Clicked(object sender, EventArgs e)
+		{
+			Navigation.PopAsync();
+		}
+
+		private void SrchBar_SearchTextChanged(object sender, EventArgs e)
 		{
 			if (srchBar.Text != string.Empty)
 			{
-				lvwCharacters.ItemsSource =  WesterosManager.FilterListCharactersName(Characters, srchBar.Text);
-				srchBar.Text = "";
+				lvwCharacters.ItemsSource = WesterosManager.FilterListCharactersName(Characters, srchBar.Text);
 			}
 			else
 			{
-				lvwCharacters.ItemsSource = WesterosManager.FilterListCharactersName(Characters, "");
+				lvwCharacters.ItemsSource = Characters;
 			}
 		}
 
@@ -52,8 +58,33 @@ namespace ASOIAF.View
 		{
 			Characters = await WesterosManager.GetCharactersAsync();
 			Characters = Characters.FindAll(c => c.Name != "");
+
+			// Replace all empty Culture
+			Characters
+		   .Where(x => x.Culture == "")
+		   .ToList()
+		   .ForEach(x => { x.Culture = "Unidentified"; });
+
+			// Replace all empty Born
+			Characters
+		   .Where(x => x.Born == "")
+		   .ToList()
+		   .ForEach(x => { x.Born = "Unmarked"; });
+
+			// Sort list
+			Characters = Characters.OrderBy(x => x.Name).ToList();
+
 			lvwCharacters.ItemsSource = Characters;
 			CharacterDetail.ListCharacters = Characters;
+
+			ShowContent();
+		}
+
+		private void ShowContent()
+		{
+			stckContent.IsVisible = true;
+			//grdContainer.VerticalOptions = LayoutOptions.Start;
+			actiActivity.IsVisible = false;
 		}
 	}
 }
