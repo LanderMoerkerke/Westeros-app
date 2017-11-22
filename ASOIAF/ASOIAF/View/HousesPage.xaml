@@ -39,9 +39,9 @@
 		<Button
 			x:Name="btnBack"
 			Margin="10"
-			BackgroundColor="SteelBlue"
+			BackgroundColor="DarkGray"
 			BorderRadius="10"
 			Text="Go Back"
-			TextColor="White" />
+			TextColor="Black" />
 	</StackLayout>
 </ContentPage>
