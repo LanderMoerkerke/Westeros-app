@@ -83,7 +83,6 @@ namespace ASOIAF.Model
 			return pList.FindAll(c => c.Name.ToLower().Contains(pFiltername.ToLower().Trim()));
 		}
 
-
 		private static HttpClient GetHttpClientForJson() {
 			HttpClient client = new HttpClient();
 			client.DefaultRequestHeaders.Add("Accept", "application/json");
@@ -128,7 +127,6 @@ namespace ASOIAF.Model
 				default:
 					break;
 			}
-
 			return dictLinks;
 		}
 
