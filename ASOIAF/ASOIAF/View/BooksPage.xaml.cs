@@ -20,6 +20,12 @@ namespace ASOIAF.View
 			LoadBooks();
 
 			btnBack.Clicked += BtnBack_Clicked;
+			lvwBooks.ItemSelected += LvwBooks_ItemSelected;
+		}
+
+		private void LvwBooks_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+		{
+			lvwBooks.SelectedItem = null;
 		}
 
 		private void BtnBack_Clicked(object sender, EventArgs e)

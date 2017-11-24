@@ -20,6 +20,12 @@ namespace ASOIAF.View
 			InitializeComponent();
 			GetHouses();
 			btnBack.Clicked += BtnBack_Clicked;
+			lvwHouses.ItemSelected += LvwHouses_ItemSelected;
+		}
+
+		private void LvwHouses_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+		{
+			lvwHouses.SelectedItem = null;
 		}
 
 		private void BtnBack_Clicked(object sender, EventArgs e)
