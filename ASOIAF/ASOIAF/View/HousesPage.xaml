@@ -5,7 +5,7 @@
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 	NavigationPage.HasNavigationBar="False">
 	<StackLayout HeightRequest="100" Spacing="0">
-		<BoxView BackgroundColor="DarkGray" HeightRequest="10" />
+		<BoxView BackgroundColor="#71360c" HeightRequest="10" />
 		<ListView x:Name="lvwHouses" RowHeight="75">
 			<ListView.ItemTemplate>
 				<DataTemplate>
@@ -15,22 +15,17 @@
 								<ColumnDefinition Width="*" />
 								<ColumnDefinition Width="20" />
 							</Grid.ColumnDefinitions>
-							<StackLayout Margin="10" VerticalOptions="CenterAndExpand">
-								<Label
-									FontSize="Medium"
-									Text="{Binding Name}"
-									TextColor="Black" />
-								<Label
-									FontAttributes="Italic"
-									FontSize="Small"
-									Text="" />
-							</StackLayout>
-							<StackLayout VerticalOptions="CenterAndExpand">
-								<Label
-									HorizontalTextAlignment="End"
-									Text="{Binding Id}"
-									TextColor="Black" />
-							</StackLayout>
+							<Label
+								Margin="10"
+								FontSize="Medium"
+								Text="{Binding Name}"
+								TextColor="#1E5467"
+								VerticalOptions="Center" />
+							<Label
+								HorizontalTextAlignment="End"
+								Text="{Binding Region}"
+								TextColor="Black"
+								VerticalOptions="Center" />
 						</Grid>
 					</ViewCell>
 				</DataTemplate>
@@ -39,7 +34,7 @@
 		<Button
 			x:Name="btnBack"
 			Margin="10"
-			BackgroundColor="DarkGray"
+			BackgroundColor="#9f5e2f"
 			BorderRadius="10"
 			Text="Go Back"
 			TextColor="Black" />
