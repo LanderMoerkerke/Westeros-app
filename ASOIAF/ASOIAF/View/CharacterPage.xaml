@@ -15,7 +15,7 @@
 			IsVisible="False"
 			Spacing="0"
 			VerticalOptions="StartAndExpand">
-			<BoxView BackgroundColor="DarkGray" HeightRequest="10" />
+			<BoxView BackgroundColor="#71360c" HeightRequest="10" />
 			<SearchBar
 				x:Name="srchBar"
 				HeightRequest="50"
@@ -59,7 +59,7 @@
 			<Button
 				x:Name="btnBack"
 				Margin="10"
-				BackgroundColor="DarkGray"
+				BackgroundColor="#9f5e2f"
 				BorderRadius="10"
 				Text="Go Back"
 				TextColor="Black" />
