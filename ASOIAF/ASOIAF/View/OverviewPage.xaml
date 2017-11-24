@@ -18,6 +18,7 @@
 			<BoxView BackgroundColor="#71360c" HeightRequest="10" />
 			<Label
 				Margin="0,25"
+				FontFamily="got.ttf#Game Of Thrones"
 				FontSize="24"
 				HorizontalOptions="FillAndExpand"
 				HorizontalTextAlignment="Center"
