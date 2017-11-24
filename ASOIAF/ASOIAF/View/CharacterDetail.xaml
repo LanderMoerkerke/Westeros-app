@@ -7,214 +7,195 @@
 	NavigationPage.HasNavigationBar="False">
 
 	<StackLayout>
-		<StackLayout>
-			<StackLayout
-				Padding="25"
-				BackgroundColor="Black"
-				HorizontalOptions="Fill">
-				<Label
-					x:Name="lblName"
-					FontSize="25"
-					HorizontalTextAlignment="Center"
-					TextColor="White" />
-			</StackLayout>
-
-			<StackLayout Margin="12,10" Spacing="15">
-				<Grid x:Name="grdAliases">
-					<Grid.ColumnDefinitions>
-						<ColumnDefinition Width="175" />
-						<ColumnDefinition Width="*" />
-					</Grid.ColumnDefinitions>
-					<Label
-						Grid.Column="0"
-						FontAttributes="Bold"
-						FontSize="Medium"
-						Text="Aliases"
-						TextColor="Black" />
-					<StackLayout x:Name="stckAliases" Grid.Column="1" />
-				</Grid>
-
-				<Grid x:Name="grdAlegiances">
-					<Grid.ColumnDefinitions>
-						<ColumnDefinition Width="175" />
-						<ColumnDefinition Width="*" />
-					</Grid.ColumnDefinitions>
-					<Label
-						Grid.Column="0"
-						FontAttributes="Bold"
-						FontSize="Medium"
-						Text="Allegiances"
-						TextColor="Black" />
-					<Label
-						x:Name="lblAllegiances"
-						Grid.Column="1"
-						FontSize="Medium"
-						TextColor="Black" />
-				</Grid>
-
-				<Grid x:Name="grdGender">
-					<Grid.ColumnDefinitions>
-						<ColumnDefinition Width="175" />
-						<ColumnDefinition Width="*" />
-					</Grid.ColumnDefinitions>
-					<Label
-						Grid.Column="0"
-						FontAttributes="Bold"
-						FontSize="Medium"
-						Text="Gender"
-						TextColor="Black" />
-					<Label
-						x:Name="lblGender"
-						Grid.Column="1"
-						FontSize="Medium"
-						TextColor="Black" />
-				</Grid>
-
-				<Grid x:Name="grdCulture">
-					<Grid.ColumnDefinitions>
-						<ColumnDefinition Width="175" />
-						<ColumnDefinition Width="*" />
-					</Grid.ColumnDefinitions>
-					<Label
-						Grid.Column="0"
-						FontAttributes="Bold"
-						FontSize="Medium"
-						Text="Culture"
-						TextColor="Black" />
-					<Label
-						x:Name="lblCulture"
-						Grid.Column="1"
-						FontSize="Medium"
-						TextColor="Black" />
-				</Grid>
-
-				<Grid x:Name="grdBorn">
-					<Grid.ColumnDefinitions>
-						<ColumnDefinition Width="175" />
-						<ColumnDefinition Width="*" />
-					</Grid.ColumnDefinitions>
-					<Label
-						Grid.Column="0"
-						FontAttributes="Bold"
-						FontSize="Medium"
-						Text="Born"
-						TextColor="Black" />
-					<Label
-						x:Name="lblBorn"
-						Grid.Column="1"
-						FontSize="Medium"
-						TextColor="Black" />
-				</Grid>
-
-				<Grid x:Name="grdStatus">
-					<Grid.ColumnDefinitions>
-						<ColumnDefinition Width="175" />
-						<ColumnDefinition Width="*" />
-					</Grid.ColumnDefinitions>
-					<Label
-						Grid.Column="0"
-						FontAttributes="Bold"
-						FontSize="Medium"
-						Text="Status"
-						TextColor="Black" />
-					<Label
-						x:Name="lblIsAlive"
-						Grid.Column="1"
-						FontSize="Medium"
-						TextColor="Black" />
-				</Grid>
-
-				<Grid x:Name="grdDiedTip">
-					<Grid.ColumnDefinitions>
-						<ColumnDefinition Width="175" />
-						<ColumnDefinition Width="*" />
-					</Grid.ColumnDefinitions>
-					<Label
-						Grid.Column="0"
-						FontAttributes="Bold"
-						FontSize="Medium"
-						Text="Died"
-						TextColor="Black" />
-					<Label
-						x:Name="lblDied"
-						Grid.Column="1"
-						FontSize="Medium"
-						TextColor="Black" />
-				</Grid>
-
-				<Grid x:Name="grdFamilyTree">
-					<Grid.ColumnDefinitions>
-						<ColumnDefinition Width="175" />
-						<ColumnDefinition Width="*" />
-					</Grid.ColumnDefinitions>
-					<Label
-						FontAttributes="Bold"
-						FontSize="Medium"
-						Text="Family tree"
-						TextColor="Black" />
-					<Label
-						Grid.Row="1"
-						Grid.Column="0"
-						FontAttributes="Bold"
-						FontSize="Medium"
-						Text="Father"
-						TextColor="Black" />
-					<Label
-						x:Name="lblFather"
-						Grid.Row="1"
-						Grid.Column="1"
-						FontSize="Medium"
-						TextColor="Black" />
-
-					<Label
-						Grid.Row="2"
-						Grid.Column="0"
-						FontAttributes="Bold"
-						FontSize="Medium"
-						Text="Mother"
-						TextColor="Black" />
-					<Label
-						x:Name="lblMother"
-						Grid.Row="2"
-						Grid.Column="1"
-						FontSize="Medium"
-						TextColor="Black" />
-
-					<Label
-						Grid.Row="3"
-						Grid.Column="0"
-						FontAttributes="Bold"
-						FontSize="Medium"
-						Text="Spouse"
-						TextColor="Black" />
-					<Label
-						x:Name="lblSpouse"
-						Grid.Row="3"
-						Grid.Column="1"
-						FontSize="Medium"
-						TextColor="Black" />
-				</Grid>
-			</StackLayout>
-
+		<StackLayout
+			Padding="25"
+			BackgroundColor="Black"
+			HorizontalOptions="Fill">
+			<Label
+				x:Name="lblName"
+				FontSize="25"
+				HorizontalTextAlignment="Center"
+				TextColor="White" />
 		</StackLayout>
-
-		<Button
-			x:Name="btnBack"
-			Margin="10"
-			BackgroundColor="DarkGray"
-			BorderRadius="10"
-			Text="Go Back"
-			TextColor="Black"
-			VerticalOptions="End" />
-
+		<StackLayout
+			Margin="12,10"
+			Spacing="15"
+			VerticalOptions="StartAndExpand">
+			<Grid x:Name="grdAliases">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="175" />
+					<ColumnDefinition Width="*" />
+				</Grid.ColumnDefinitions>
+				<Label
+					Grid.Column="0"
+					FontAttributes="Bold"
+					FontSize="Medium"
+					Text="Aliases"
+					TextColor="Black" />
+				<StackLayout x:Name="stckAliases" Grid.Column="1" />
+			</Grid>
+			<Grid x:Name="grdAlegiances">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="175" />
+					<ColumnDefinition Width="*" />
+				</Grid.ColumnDefinitions>
+				<Label
+					Grid.Column="0"
+					FontAttributes="Bold"
+					FontSize="Medium"
+					Text="Allegiances"
+					TextColor="Black" />
+				<Label
+					x:Name="lblAllegiances"
+					Grid.Column="1"
+					FontSize="Medium"
+					TextColor="Black" />
+			</Grid>
+			<Grid x:Name="grdGender">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="175" />
+					<ColumnDefinition Width="*" />
+				</Grid.ColumnDefinitions>
+				<Label
+					Grid.Column="0"
+					FontAttributes="Bold"
+					FontSize="Medium"
+					Text="Gender"
+					TextColor="Black" />
+				<Label
+					x:Name="lblGender"
+					Grid.Column="1"
+					FontSize="Medium"
+					TextColor="Black" />
+			</Grid>
+			<Grid x:Name="grdCulture">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="175" />
+					<ColumnDefinition Width="*" />
+				</Grid.ColumnDefinitions>
+				<Label
+					Grid.Column="0"
+					FontAttributes="Bold"
+					FontSize="Medium"
+					Text="Culture"
+					TextColor="Black" />
+				<Label
+					x:Name="lblCulture"
+					Grid.Column="1"
+					FontSize="Medium"
+					TextColor="Black" />
+			</Grid>
+			<Grid x:Name="grdBorn">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="175" />
+					<ColumnDefinition Width="*" />
+				</Grid.ColumnDefinitions>
+				<Label
+					Grid.Column="0"
+					FontAttributes="Bold"
+					FontSize="Medium"
+					Text="Born"
+					TextColor="Black" />
+				<Label
+					x:Name="lblBorn"
+					Grid.Column="1"
+					FontSize="Medium"
+					TextColor="Black" />
+			</Grid>
+			<Grid x:Name="grdStatus">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="175" />
+					<ColumnDefinition Width="*" />
+				</Grid.ColumnDefinitions>
+				<Label
+					Grid.Column="0"
+					FontAttributes="Bold"
+					FontSize="Medium"
+					Text="Status"
+					TextColor="Black" />
+				<Label
+					x:Name="lblIsAlive"
+					Grid.Column="1"
+					FontSize="Medium"
+					TextColor="Black" />
+			</Grid>
+			<Grid x:Name="grdDiedTip">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="175" />
+					<ColumnDefinition Width="*" />
+				</Grid.ColumnDefinitions>
+				<Label
+					Grid.Column="0"
+					FontAttributes="Bold"
+					FontSize="Medium"
+					Text="Died"
+					TextColor="Black" />
+				<Label
+					x:Name="lblDied"
+					Grid.Column="1"
+					FontSize="Medium"
+					TextColor="Black" />
+			</Grid>
+			<Grid x:Name="grdFamilyTree">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="175" />
+					<ColumnDefinition Width="*" />
+				</Grid.ColumnDefinitions>
+				<Label
+					FontAttributes="Bold"
+					FontSize="Medium"
+					Text="Family tree"
+					TextColor="Black" />
+				<Label
+					Grid.Row="1"
+					Grid.Column="0"
+					FontAttributes="Bold"
+					FontSize="Medium"
+					Text="Father"
+					TextColor="Black" />
+				<Label
+					x:Name="lblFather"
+					Grid.Row="1"
+					Grid.Column="1"
+					FontSize="Medium"
+					TextColor="Black" />
+				<Label
+					Grid.Row="2"
+					Grid.Column="0"
+					FontAttributes="Bold"
+					FontSize="Medium"
+					Text="Mother"
+					TextColor="Black" />
+				<Label
+					x:Name="lblMother"
+					Grid.Row="2"
+					Grid.Column="1"
+					FontSize="Medium"
+					TextColor="Black" />
+				<Label
+					Grid.Row="3"
+					Grid.Column="0"
+					FontAttributes="Bold"
+					FontSize="Medium"
+					Text="Spouse"
+					TextColor="Black" />
+				<Label
+					x:Name="lblSpouse"
+					Grid.Row="3"
+					Grid.Column="1"
+					FontSize="Medium"
+					TextColor="Black" />
+			</Grid>
+		</StackLayout>
+		<StackLayout VerticalOptions="End">
+			<Button
+				x:Name="btnBack"
+				Margin="10"
+				BackgroundColor="#9f5e2f"
+				BorderRadius="10"
+				Text="Go Back"
+				TextColor="Black"
+				VerticalOptions="End" />
+		</StackLayout>
 	</StackLayout>
-
-	<!--
-		List Titles
-		List Aliases
-		Father
-		Mother
-		Spouse
-		List Allegiances
-	-->
 </ContentPage>
