@@ -6,9 +6,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
 namespace ASOIAF.View
 {
+	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class OverviewPage : ContentPage
 	{
 		public List<Character> Characters { get; set; }
@@ -19,7 +21,7 @@ namespace ASOIAF.View
 
 			ShowData();
 
-			btnDiscover.Tapped += BtnDiscover_Tapped;
+			//btnDiscover.Tapped += BtnDiscover_Tapped;
 			btnBooks.Tapped += BtnBooks_Tapped;
 			btnCharacters.Tapped += BtnCharacters_Tapped;
 			btnHouses.Tapped += BtnHouses_Tapped;

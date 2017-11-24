@@ -26,7 +26,7 @@
 				TextColor="Black" />
 			<!--  FontFamily="got.ttf#Game Of Thrones"/>  -->
 			<StackLayout Margin="10,0" Spacing="40">
-				<StackLayout>
+				<!--<StackLayout>
 					<Label
 						FontAttributes="Bold"
 						FontSize="20"
@@ -37,108 +37,110 @@
 						HasShadow="True"
 						OutlineColor="#7a390b ">
 						<Label Text="test" TextColor="Black" />
-						<StackLayout.GestureRecognizers>
+						<Frame.GestureRecognizers>
 							<TapGestureRecognizer x:Name="btnDiscover" />
-						</StackLayout.GestureRecognizers>
+						</Frame.GestureRecognizers>
 					</Frame>
-				</StackLayout>
+				</StackLayout>-->
 				<StackLayout>
 					<Label
 						FontAttributes="Bold"
 						FontSize="20"
 						Text="Tables"
 						TextColor="#2D2D2D" />
-					<Grid
+					<Frame
 						Margin="0,5"
 						Padding="12,0"
 						BackgroundColor="#BCBCBC "
-						HasShadow="True"
 						OutlineColor="#7a390b ">
-						<Grid.ColumnDefinitions>
-							<ColumnDefinition Width="60" />
-							<ColumnDefinition Width="Auto" />
-						</Grid.ColumnDefinitions>
-						<Grid.RowDefinitions>
-							<RowDefinition Height="70" />
-						</Grid.RowDefinitions>
-						<Image
-							Grid.Column="0"
-							HeightRequest="42"
-							HorizontalOptions="Center"
-							Source="https://d30y9cdsu7xlg0.cloudfront.net/png/5020-200.png"
-							WidthRequest="42" />
-						<Label
-							Grid.Column="1"
-							Margin="8,0,0,0"
-							FontSize="Medium"
-							Text="Books"
-							TextColor="Black"
-							VerticalOptions="Center" />
-						<Grid.GestureRecognizers>
-							<TapGestureRecognizer x:Name="btnBooks" />
-						</Grid.GestureRecognizers>
-					</Grid>
-
-					<Grid
+						<Grid>
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="60" />
+								<ColumnDefinition Width="Auto" />
+							</Grid.ColumnDefinitions>
+							<Grid.RowDefinitions>
+								<RowDefinition Height="70" />
+							</Grid.RowDefinitions>
+							<Image
+								Grid.Column="0"
+								HeightRequest="42"
+								HorizontalOptions="Center"
+								Source="https://d30y9cdsu7xlg0.cloudfront.net/png/5020-200.png"
+								WidthRequest="42" />
+							<Label
+								Grid.Column="1"
+								Margin="8,0,0,0"
+								FontSize="Medium"
+								Text="Books"
+								TextColor="Black"
+								VerticalOptions="Center" />
+							<Grid.GestureRecognizers>
+								<TapGestureRecognizer x:Name="btnBooks" />
+							</Grid.GestureRecognizers>
+						</Grid>
+					</Frame>
+					<Frame
 						Margin="0,5"
 						Padding="20,0"
 						BackgroundColor="#BCBCBC "
 						HasShadow="True"
 						OutlineColor="#7a390b ">
-						<Grid.ColumnDefinitions>
-							<ColumnDefinition Width="60" />
-							<ColumnDefinition Width="Auto" />
-						</Grid.ColumnDefinitions>
-						<Grid.RowDefinitions>
-							<RowDefinition Height="70" />
-						</Grid.RowDefinitions>
-						<Image
-							Grid.Column="0"
-							HeightRequest="40"
-							HorizontalOptions="Start"
-							Source="https://cdn.onlinewebfonts.com/svg/img_571050.png"
-							WidthRequest="40" />
-						<Label
-							Grid.Column="1"
-							Text="Characters"
-							TextColor="Black"
-							VerticalOptions="Center" />
-						<Grid.GestureRecognizers>
-							<TapGestureRecognizer x:Name="btnCharacters" />
-						</Grid.GestureRecognizers>
-					</Grid>
-
-					<Grid
+						<Grid>
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="60" />
+								<ColumnDefinition Width="Auto" />
+							</Grid.ColumnDefinitions>
+							<Grid.RowDefinitions>
+								<RowDefinition Height="70" />
+							</Grid.RowDefinitions>
+							<Image
+								Grid.Column="0"
+								HeightRequest="40"
+								HorizontalOptions="Start"
+								Source="https://cdn.onlinewebfonts.com/svg/img_571050.png"
+								WidthRequest="40" />
+							<Label
+								Grid.Column="1"
+								Text="Characters"
+								TextColor="Black"
+								VerticalOptions="Center" />
+							<Grid.GestureRecognizers>
+								<TapGestureRecognizer x:Name="btnCharacters" />
+							</Grid.GestureRecognizers>
+						</Grid>
+					</Frame>
+					<Frame
 						Margin="0,5"
 						Padding="20,0"
 						BackgroundColor="#BCBCBC "
 						HasShadow="True"
 						OutlineColor="#7a390b ">
-						<Grid.ColumnDefinitions>
-							<ColumnDefinition Width="60" />
-							<ColumnDefinition Width="Auto" />
-						</Grid.ColumnDefinitions>
-						<Grid.RowDefinitions>
-							<RowDefinition Height="70" />
-						</Grid.RowDefinitions>
-						<Image
-							Grid.Column="0"
-							HeightRequest="40"
-							HorizontalOptions="Start"
-							Source="https://d30y9cdsu7xlg0.cloudfront.net/png/26224-200.png"
-							WidthRequest="40" />
-						<Label
-							Grid.Column="1"
-							FontSize="Medium"
-							HorizontalOptions="Center"
-							Text="Houses"
-							TextColor="Black"
-							VerticalOptions="Center" />
-
-						<StackLayout.GestureRecognizers>
-							<TapGestureRecognizer x:Name="btnHouses" />
-						</StackLayout.GestureRecognizers>
-					</Grid>
+						<Grid>
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="60" />
+								<ColumnDefinition Width="Auto" />
+							</Grid.ColumnDefinitions>
+							<Grid.RowDefinitions>
+								<RowDefinition Height="70" />
+							</Grid.RowDefinitions>
+							<Image
+								Grid.Column="0"
+								HeightRequest="40"
+								HorizontalOptions="Start"
+								Source="https://d30y9cdsu7xlg0.cloudfront.net/png/26224-200.png"
+								WidthRequest="40" />
+							<Label
+								Grid.Column="1"
+								FontSize="Medium"
+								HorizontalOptions="Center"
+								Text="Houses"
+								TextColor="Black"
+								VerticalOptions="Center" />
+							<Grid.GestureRecognizers>
+								<TapGestureRecognizer x:Name="btnHouses" />
+							</Grid.GestureRecognizers>
+						</Grid>
+					</Frame>
 				</StackLayout>
 			</StackLayout>
 		</StackLayout>
