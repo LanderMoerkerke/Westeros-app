@@ -187,15 +187,15 @@
 					TextColor="Black" />
 			</Grid>
 		</StackLayout>
-		<StackLayout VerticalOptions="End">
-			<Button
-				x:Name="btnBack"
-				Margin="10"
-				BackgroundColor="#9f5e2f"
-				BorderRadius="10"
-				Text="Go Back"
-				TextColor="Black"
-				VerticalOptions="End" />
-		</StackLayout>
+		<Button
+			x:Name="btnBack"
+			Grid.Column="1"
+			Margin="10"
+			BackgroundColor="#9f5e2f"
+			BorderColor="SaddleBrown"
+			BorderRadius="10"
+			BorderWidth="1"
+			Text="Go Back"
+			TextColor="White" />
 	</StackLayout>
 </ContentPage>
