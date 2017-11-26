@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+	x:Class="ASOIAF.View.HousesDetail"
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	BackgroundColor="White"
+	NavigationPage.HasNavigationBar="False">
+	<ScrollView>
+		<StackLayout>
+			<StackLayout
+				Padding="25"
+				BackgroundColor="Black"
+				HorizontalOptions="Fill">
+				<Label
+					x:Name="lblName"
+					FontSize="25"
+					HorizontalTextAlignment="Center"
+					TextColor="White" />
+			</StackLayout>
+			<Grid
+				Margin="12,10"
+				RowSpacing="0"
+				VerticalOptions="StartAndExpand">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="175" />
+					<ColumnDefinition Width="*" />
+				</Grid.ColumnDefinitions>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="*" />
+				</Grid.RowDefinitions>
+				<Label
+					Grid.Row="0"
+					Grid.Column="0"
+					FontAttributes="Bold"
+					FontSize="Medium"
+					Text="Region"
+					TextColor="Black" />
+				<Label
+					x:Name="lblRegion"
+					Grid.Row="0"
+					Grid.Column="1"
+					FontSize="Medium"
+					HorizontalOptions="End"
+					TextColor="Black" />
+
+				<Label
+					Grid.Row="1"
+					Grid.Column="0"
+					FontAttributes="Bold"
+					FontSize="Medium"
+					Text="Coat of Arms"
+					TextColor="Black" />
+				<Label
+					x:Name="lblCoatofArms"
+					Grid.Row="1"
+					Grid.Column="1"
+					FontSize="Medium"
+					HorizontalTextAlignment="End"
+					TextColor="Black" />
+
+
+				<Label
+					Grid.Row="2"
+					Grid.Column="0"
+					FontAttributes="Bold"
+					FontSize="Medium"
+					Text="Words"
+					TextColor="Black" />
+				<Label
+					x:Name="lblWords"
+					Grid.Row="2"
+					Grid.Column="1"
+					FontSize="Medium"
+					HorizontalTextAlignment="End"
+					TextColor="Black" />
+
+
+				<Label
+					Grid.Row="3"
+					Grid.Column="0"
+					FontAttributes="Bold"
+					FontSize="Medium"
+					Text="Titles"
+					TextColor="Black" />
+				<StackLayout
+					x:Name="stckTitles"
+					Grid.Row="3"
+					Grid.RowSpan="2"
+					Grid.Column="1"
+					HorizontalOptions="End"
+					Spacing="0" />
+
+				<Label
+					Grid.Row="4"
+					Grid.Column="0"
+					FontAttributes="Bold"
+					FontSize="Medium"
+					Text="Seats"
+					TextColor="Black" />
+				<StackLayout
+					x:Name="stckSeats"
+					Grid.Row="4"
+					Grid.RowSpan="2"
+					Grid.Column="1"
+					HorizontalOptions="End"
+					Spacing="0" />
+
+				<Label
+					Grid.Row="5"
+					Grid.Column="0"
+					FontAttributes="Bold"
+					FontSize="Medium"
+					Text="Current lord"
+					TextColor="Black" />
+				<Label
+					x:Name="lblLord"
+					Grid.Row="5"
+					Grid.Column="1"
+					FontSize="Medium"
+					HorizontalTextAlignment="End"
+					TextColor="Black" />
+
+
+				<Label
+					Grid.Row="6"
+					Grid.Column="0"
+					FontAttributes="Bold"
+					FontSize="Medium"
+					Text="Heir"
+					TextColor="Black" />
+				<Label
+					x:Name="lblHeir"
+					Grid.Row="6"
+					Grid.Column="1"
+					FontSize="Medium"
+					HorizontalTextAlignment="End"
+					TextColor="Black" />
+
+				<Label
+					Grid.Row="7"
+					Grid.Column="0"
+					FontAttributes="Bold"
+					FontSize="Medium"
+					Text="Founded"
+					TextColor="Black" />
+				<Label
+					x:Name="lblFounded"
+					Grid.Row="7"
+					Grid.Column="1"
+					FontSize="Medium"
+					HorizontalTextAlignment="End"
+					TextColor="Black" />
+
+				<Label
+					Grid.Row="8"
+					Grid.Column="0"
+					FontAttributes="Bold"
+					FontSize="Medium"
+					Text="Founder"
+					TextColor="Black" />
+				<Label
+					x:Name="lblFounder"
+					Grid.Row="8"
+					Grid.Column="1"
+					FontSize="Medium"
+					HorizontalTextAlignment="End"
+					TextColor="Black" />
+
+				<Label
+					Grid.Row="9"
+					Grid.Column="0"
+					FontAttributes="Bold"
+					FontSize="Medium"
+					Text="Sworn members"
+					TextColor="Black" />
+				<StackLayout
+					x:Name="stckMembers"
+					Grid.Row="9"
+					Grid.RowSpan="2"
+					Grid.Column="1"
+					HorizontalOptions="End"
+					Spacing="0" />
+			</Grid>
+			<StackLayout VerticalOptions="End">
+				<Button
+					x:Name="btnBack"
+					Margin="10"
+					BackgroundColor="#9f5e2f"
+					BorderRadius="10"
+					Text="Go Back"
+					TextColor="Black"
+					VerticalOptions="End" />
+			</StackLayout>
+		</StackLayout>
+	</ScrollView>
+</ContentPage>
