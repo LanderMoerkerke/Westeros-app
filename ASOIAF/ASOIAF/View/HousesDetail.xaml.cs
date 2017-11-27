@@ -38,6 +38,8 @@ namespace ASOIAF.View
 
 		private void ShowData()
 		{
+			imgBackground.Source = ImageSource.FromResource("ASOIAF.Image.castle.jpg");
+
 			List<string> unknown = new List<string>(new string[] { "Unknown" });
 
 			lblName.Text = CheckIfStringEmpty(SelectedHouse.Name);
